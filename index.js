@@ -6,12 +6,13 @@ inquirer
         {
             type: 'input',
             message: "What is the title of your project?",
-        }
+        },
+
 
 
 
     ])
     .then((response) =>
-        fs.appendFile('README.md', `${JSON.stringify(response)}\n`
+        fs.appendFile('README.md', `${JSON.stringify(response)}\n`,
         (err) =>
         err ? console.log('Uh-oh!') : console.log('Nice! We did it!')));
