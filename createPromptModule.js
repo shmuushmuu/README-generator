@@ -24,7 +24,7 @@ inquirer
             type: 'input',
             message: 'What is your e-mail address?',
             name: 'email',
-        }
+        },
         {
             type: 'input',
             message: 'What is your GitHub account?',

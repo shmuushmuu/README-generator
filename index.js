@@ -16,6 +16,7 @@ const generateMarkdown = (answers) => {
     return `${answers.projectTitle}
     [Project Link](https://${answers.gitHub}.github.io/${answers.projectTitle}/)
     
+    //[![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
     
     ## Table of Contents
     - [Description](#description-of-project)
@@ -31,17 +32,6 @@ const generateMarkdown = (answers) => {
     ## Installation Instructions
     ${answers.installation}
     
-    ## Usage
-    ${answers.usage}
-
-    ## Contributing
-
-    ## Tests
+    ## Questions
 `
 }
-//[![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
-
-    // .then((response) =>
-    //     fs.appendFile('README.md', `${JSON.stringify(response)}\n`,
-    //     (err) =>
-    //     err ? console.log('Uh-oh!') : console.log('Nice! We did it!')));
