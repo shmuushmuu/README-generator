@@ -20,17 +20,26 @@ const generateMarkdown = (answers) => {
     ## Table of Contents
     - [Description](#description-of-project)
     - [Installation Insctructions](#installation-instructions)
-    - [Visuals](#visuals)
+    - [Usage](#usage)
+    - [Contributing](#contributing)
+    - [Tests](#tests)
+
     
     ## Description of Project
     ${answers.description}
    
     ## Installation Instructions
     ${answers.installation}
+    
+    ## Usage
+    ${answers.usage}
 
-    ## Visuals
+    ## Contributing
+
+    ## Tests
 `
 }
+//[![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
 
     // .then((response) =>
     //     fs.appendFile('README.md', `${JSON.stringify(response)}\n`,
