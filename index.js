@@ -1,7 +1,7 @@
 const inquirer = require('inquierer');
 const fs = require('fs');
 
-const prompt = inquirer.createPromtModule();
+const prompt = inquirer.createPromptModule();
 
 const writeToFile = (readme, projectTitle) => {
     try {
@@ -12,24 +12,23 @@ const writeToFile = (readme, projectTitle) => {
     }
 }
 
-inquirer
-    .prompt([
-        {
-            type: 'input',
-            message: "What is the title of your project?",
-            name: "Project title",
-        },
-        {
-            type: 'input',
-            message: 'What is the description of this project?',
-            name: "Description",
-        },
-        {
-            type: 'input',
-            message: 'What are the installation instructions?',
-            name: 'installation',
-        },
-    ])
+const generateMarkdown = (answers) => {
+    return `${answers.projectTitle}
+    [Project Link](https://shmuushmuu.github.io/JQuery-powered-calculator/)
+    
+    
+    ## Table of Contents
+    - [Description](#description-of-project)
+    - [Visuals](#visuals)
+    
+    ## Description of Project
+   ${answers.description}
+    
+    ## Visuals
+    The day-planner should look like this:
+    
+    ![Screenshot](assets/images/scheduler-screenshot.png)`
+}
 
     // .then((response) =>
     //     fs.appendFile('README.md', `${JSON.stringify(response)}\n`,
