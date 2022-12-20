@@ -29,9 +29,7 @@ const generateMarkdown = (answers) => {
     ${answers.installation}
 
     ## Visuals
-    The day-planner should look like this:
-    
-    ![Screenshot](assets/images/scheduler-screenshot.png)`
+`
 }
 
     // .then((response) =>
