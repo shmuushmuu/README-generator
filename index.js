@@ -14,16 +14,20 @@ const writeToFile = (readme, projectTitle) => {
 
 const generateMarkdown = (answers) => {
     return `${answers.projectTitle}
-    [Project Link](https://shmuushmuu.github.io/JQuery-powered-calculator/)
+    [Project Link](https://${answers.gitHub}.github.io/${answers.projectTitle}/)
     
     
     ## Table of Contents
     - [Description](#description-of-project)
+    - [Installation Insctructions](#installation-instructions)
     - [Visuals](#visuals)
     
     ## Description of Project
-   ${answers.description}
-    
+    ${answers.description}
+   
+    ## Installation Instructions
+    ${answers.installation}
+
     ## Visuals
     The day-planner should look like this:
     
