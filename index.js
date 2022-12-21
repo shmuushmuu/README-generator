@@ -37,19 +37,20 @@ const questions = () => {
     ]);
 };
 
-const writeToFile = data => {
-    try {
-        fs.writeFile('README.md', data);
-        console.log('Ooooooh baby we did it.')
-    } catch (err) {
-        confirm.log(err);
-    }
-}
+const writeFile = data => {
+    fs.writeFile('newREADME.md', data, err => {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log('Ooooooh baby we did it.')
+        }
+    })
+};
 
 questions() 
 .then(answers => { 
     return generateReadMe(answers);
 })
 .then(data => {
-    return writeToFile(data);
+    return writeFile(data);
 });
