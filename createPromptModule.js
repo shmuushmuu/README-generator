@@ -12,7 +12,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'What are the installation instructions for this project?',
+            message: 'What other installations are required for this project to run?',
             name: 'installation',
         },
         {

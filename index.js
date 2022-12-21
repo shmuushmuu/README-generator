@@ -1,37 +1,51 @@
-const inquirer = require('inquierer');
+const inquirer = require('inquirer');
 const fs = require('fs');
+const generateReadMe = require ('./utils/generateMarkdown');
 
-const prompt = inquirer.createPromptModule();
 
-const writeToFile = (readme, projectTitle) => {
+const writeToFile = (readme) => {
     try {
         fs.writeFileSync('README.md', readme);
-        console.log('Success!')
+        console.log('Ooooooh baby we did it.')
     } catch (err) {
         confirm.log(err);
     }
 }
 
-const generateMarkdown = (answers) => {
-    return `${answers.projectTitle}
-    [Project Link](https://${answers.gitHub}.github.io/${answers.projectTitle}/)
-    
-    //[![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
-    
-    ## Table of Contents
-    - [Description](#description-of-project)
-    - [Installation Insctructions](#installation-instructions)
-    - [Usage](#usage)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-
-    
-    ## Description of Project
-    ${answers.description}
-   
-    ## Installation Instructions
-    ${answers.installation}
-    
-    ## Questions
-`
+const questions = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: "What is the title of your project?",
+            name: "title",
+        },
+        {
+            type: 'input',
+            message: 'What is the description of this project?',
+            name: "description",
+        },
+        {
+            type: 'input',
+            message: 'What other installations are required for this project to run?',
+            name: 'installation',
+        },
+        {
+            type: 'input',
+            message: 'What is the usage information for this project?',
+            name: 'usage',
+        },
+        {
+            type: 'input',
+            message: 'What is your e-mail address?',
+            name: 'email',
+        },
+        {
+            type: 'input',
+            message: 'What is your GitHub account?',
+            name: 'gitHub',
+        }
+    ]);
 }
+
+generateReadMe();
+writeToFile();
