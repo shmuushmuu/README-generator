@@ -47,5 +47,6 @@ const questions = () => {
     ]);
 }
 
+questions();
 generateReadMe();
 writeToFile();

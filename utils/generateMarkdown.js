@@ -1,7 +1,7 @@
 const generateMarkdown = data => {
   return `# ${data.title}
 
-  ![Project Link](https://${data.gitHub}.github.io/${data.projectTitle}/)
+  ![Project Link](https://${data.gitHub}.github.io/${data.ptitle}/)
 
     [![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
     
@@ -12,7 +12,7 @@ const generateMarkdown = data => {
 
     
     ## Description of Project
-    ${adata.description}
+    ${data.description}
    
     ## Installation Instructions
     ${data.installation}
