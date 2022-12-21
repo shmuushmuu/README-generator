@@ -18,7 +18,7 @@ const generateMarkdown = data => {
 
   ## Questions
   Please feel free to reach out to me difrectly at ${data.email}, or you can find this project and others at my GitHub account, https://github.com/${data.gitHub}.
-  `
+  `;
 }
 
 module.exports = generateMarkdown;
