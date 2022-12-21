@@ -21,11 +21,6 @@ const questions = () => {
         },
         {
             type: 'input',
-            message: 'What is the usage information for this project?',
-            name: 'usage',
-        },
-        {
-            type: 'input',
             message: 'What is your e-mail address?',
             name: 'email',
         },
@@ -33,6 +28,13 @@ const questions = () => {
             type: 'input',
             message: 'What is your GitHub account?',
             name: 'gitHub',
+        },
+        {
+            type: 'list',
+            message: 'Please choose a license:',
+            name: 'license',
+            choices: ['MIT', 'ISC', 'Mozilla Public License 2.0'],
+            default: 'MIT'
         }
     ]);
 };
