@@ -2,16 +2,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateReadMe = require ('./utils/generateMarkdown');
 
-
-const writeToFile = (readme) => {
-    try {
-        fs.writeFileSync('README.md', readme);
-        console.log('Ooooooh baby we did it.')
-    } catch (err) {
-        confirm.log(err);
-    }
-}
-
 const questions = () => {
     return inquirer.prompt([
         {
@@ -45,8 +35,21 @@ const questions = () => {
             name: 'gitHub',
         }
     ]);
+};
+
+const writeToFile = data => {
+    try {
+        fs.writeFile('README.md', data);
+        console.log('Ooooooh baby we did it.')
+    } catch (err) {
+        confirm.log(err);
+    }
 }
 
-questions();
-generateReadMe();
-writeToFile();
+questions() 
+.then(answers => { 
+    return generateReadMe(answers);
+})
+.then(data => {
+    return writeToFile(data);
+});

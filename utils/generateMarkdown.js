@@ -1,14 +1,14 @@
 const generateMarkdown = data => {
   return `# ${data.title}
 
-  ![Project Link](https://${data.gitHub}.github.io/${data.ptitle}/)
+  ![Project Link](https://${data.gitHub}.github.io/${data.title}/)
 
     [![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
     
     ## Table of Contents
-  - ![Description](#description - of - project)
-  - ![Installation Instructions](#installation - instructions)
-  - ![Tests](#tests)
+  - ![Description](#description-of-project)
+  - ![Installation Instructions](#installation-instructions)
+  - ![Usage](#usage)
 
     
     ## Description of Project
